@@ -40,11 +40,11 @@ public:		/* コンストラクタ・デストラクタ */
 	CEnemy(TYPE type);
 	virtual ~CEnemy();
 
-public:		/* メンバ関数宣言 */
-	virtual void Init();	//初期化
-	virtual void Input();	//入力
-	virtual void Output();	//出力
-	virtual void Uninit();	//終了
+public:		/* 仮想関数宣言 */
+	virtual void Init() = 0;	//初期化 (純粋仮想関数「～ = 0;」 … 関数の実態は不要)
+	virtual void Input() = 0;	//入力
+	virtual void Output() = 0;	//出力
+	virtual void Uninit() = 0;	//終了
 
 private:	/* 静的メンバ変数宣言 */
 	static CEnemy* m_apEnemy[MAX_ENEMY];	//ポインタ配列
@@ -52,10 +52,9 @@ private:	/* 静的メンバ変数宣言 */
 	static int m_nNumHuman;					//人型の数
 	static int m_nNumBird;					//鳥型の数
 
-private:	/* メンバ変数宣言 */
-	int m_nLife;		//体力
-	int m_nAttack;		//攻撃力
-
+protected:	/* メンバ変数宣言 */
+	int m_nLife;
+	int m_nAttack;
 };
 
 #endif

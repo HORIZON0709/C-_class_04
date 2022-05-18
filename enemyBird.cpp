@@ -39,9 +39,6 @@ CEnemyBird::~CEnemyBird()
 //===================================================
 void CEnemyBird::Init()
 {
-	//親クラスの初期化
-	CEnemy::Init();
-
 	//メンバ変数を初期化
 	m_nSpeedFly = 0;
 }
@@ -51,8 +48,7 @@ void CEnemyBird::Init()
 //===================================================
 void CEnemyBird::Uninit()
 {
-	//親クラスの終了
-	CEnemy::Uninit();
+	
 }
 
 //===================================================
@@ -60,10 +56,13 @@ void CEnemyBird::Uninit()
 //===================================================
 void CEnemyBird::Input()
 {
-	//親クラスの入力
-	CEnemy::Input();
-
 	//入力
+	printf("\n 体力 > ");
+	scanf("%d", &m_nLife);
+
+	printf(" 攻撃力 > ");
+	scanf("%d", &m_nAttack);
+
 	printf(" 飛行スピード > ");
 	scanf("%d", &m_nSpeedFly);
 }
@@ -73,9 +72,7 @@ void CEnemyBird::Input()
 //===================================================
 void CEnemyBird::Output()
 {
-	//親クラスの出力
-	CEnemy::Output();
-
-	//出力
-	printf(" 飛行スピード : %d ]\n", m_nSpeedFly);	//飛行スピード
+	printf("\n\n [ 体力 : %d ]", m_nLife);				//体力
+	printf("\n [ 攻撃力 : %d ]", m_nAttack);			//攻撃力
+	printf("\n [ 飛行スピード : %d ]", m_nSpeedFly);	//飛行スピード
 }

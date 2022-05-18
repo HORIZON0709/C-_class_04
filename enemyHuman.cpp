@@ -39,9 +39,6 @@ CEnemyHuman::~CEnemyHuman()
 //===================================================
 void CEnemyHuman::Init()
 {
-	//親クラスの初期化
-	CEnemy::Init();
-
 	//メンバ変数を初期化
 	m_nSpeedWalk = 0;
 }
@@ -51,8 +48,7 @@ void CEnemyHuman::Init()
 //===================================================
 void CEnemyHuman::Uninit()
 {
-	//親クラスの終了
-	CEnemy::Uninit();
+	
 }
 
 //===================================================
@@ -60,10 +56,13 @@ void CEnemyHuman::Uninit()
 //===================================================
 void CEnemyHuman::Input()
 {
-	//親クラスの入力
-	CEnemy::Input();
-
 	//入力
+	printf("\n 体力 > ");
+	scanf("%d", &m_nLife);
+
+	printf(" 攻撃力 > ");
+	scanf("%d", &m_nAttack);
+
 	printf(" 歩くスピード > ");
 	scanf("%d", &m_nSpeedWalk);
 }
@@ -73,9 +72,7 @@ void CEnemyHuman::Input()
 //===================================================
 void CEnemyHuman::Output()
 {
-	//親クラスの出力
-	CEnemy::Output();
-
-	//出力
-	printf(" 歩くスピード : %d ]\n", m_nSpeedWalk);	//歩くスピード
+	printf("\n\n [ 体力 : %d ]", m_nLife);				//体力
+	printf("\n [ 攻撃力 : %d ]", m_nAttack);			//攻撃力
+	printf("\n [ 歩くスピード : %d ]", m_nSpeedWalk);	//歩くスピード
 }
