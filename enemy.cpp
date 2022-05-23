@@ -54,6 +54,13 @@ CEnemy* CEnemy::Create(TYPE type)
 		break;
 	}
 
+	if (m_apEnemy[nIdx] == nullptr)
+	{//NULLチェック
+		assert(false);
+	}
+
+	/* nullptrではない */
+
 	//初期化
 	m_apEnemy[nIdx]->Init();
 
