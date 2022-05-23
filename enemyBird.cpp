@@ -72,7 +72,7 @@ void CEnemyBird::Input()
 //===================================================
 void CEnemyBird::Output()
 {
-	printf("\n\n [ 体力 : %d ]", m_nLife);				//体力
+	printf("\n [ 体力 : %d ]", m_nLife);				//体力
 	printf("\n [ 攻撃力 : %d ]", m_nAttack);			//攻撃力
 	printf("\n [ 飛行スピード : %d ]", m_nSpeedFly);	//飛行スピード
 }

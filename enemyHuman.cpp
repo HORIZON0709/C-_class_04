@@ -72,7 +72,7 @@ void CEnemyHuman::Input()
 //===================================================
 void CEnemyHuman::Output()
 {
-	printf("\n\n [ 体力 : %d ]", m_nLife);				//体力
+	printf("\n [ 体力 : %d ]", m_nLife);				//体力
 	printf("\n [ 攻撃力 : %d ]", m_nAttack);			//攻撃力
 	printf("\n [ 歩くスピード : %d ]", m_nSpeedWalk);	//歩くスピード
 }

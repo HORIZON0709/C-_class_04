@@ -35,20 +35,20 @@ CEnemy* CEnemy::Create(TYPE type)
 
 	switch (type)
 	{//種類毎の処理
-	case CEnemy::TYPE::HUMAN:	/* 人型 */
+	case TYPE::HUMAN:	/* 人型 */
 
 		//メモリの動的確保
 		m_apEnemy[nIdx] = new CEnemyHuman;
 		break;
 
-	case CEnemy::TYPE::BIRD:	/* 鳥型 */
+	case TYPE::BIRD:	/* 鳥型 */
 
 		//メモリの動的確保
 		m_apEnemy[nIdx] = new CEnemyBird;
 		break;
 
-	case CEnemy::TYPE::NONE:	/* 選択範囲外 */
-	case CEnemy::TYPE::MAX:
+	case TYPE::NONE:	/* 選択範囲外 */
+	case TYPE::MAX:
 	default:
 		assert(false);
 		break;
@@ -65,7 +65,7 @@ CEnemy* CEnemy::Create(TYPE type)
 //===================================================
 void CEnemy::ReleaseAll()
 {
-	for (int i = 0; i < CEnemy::MAX_ENEMY; i++)
+	for (int i = 0; i < MAX_ENEMY; i++)
 	{
 		if (m_apEnemy[i] == nullptr)
 		{//NULLチェック
@@ -88,6 +88,9 @@ void CEnemy::ReleaseAll()
 //===================================================
 void CEnemy::OutputAll()
 {
+	//メッセージ
+	printf("\n 《 設定した敵のステータスはこちら 》");
+
 	for (int i = 0; i < m_nNumAll; i++)
 	{
 		if (m_apEnemy[i] == nullptr)
@@ -96,6 +99,9 @@ void CEnemy::OutputAll()
 		}
 
 		/* nullptrでは無い場合 */
+
+		//何体目か表示
+		printf("\n\n ***** %d体目 *****",(i + 1));
 
 		//出力
 		m_apEnemy[i]->Output();
@@ -161,20 +167,20 @@ CEnemy::CEnemy(TYPE type)
 
 	switch (type)
 	{
-	case CEnemy::TYPE::HUMAN:	/* 人型 */
+	case TYPE::HUMAN:	/* 人型 */
 		
 		//数をカウントアップ
 		m_nNumHuman++;
 		break;
 
-	case CEnemy::TYPE::BIRD:	/* 鳥型 */
+	case TYPE::BIRD:	/* 鳥型 */
 		
 		//数をカウントアップ
 		m_nNumBird++;
 		break;
 
-	case CEnemy::TYPE::NONE:	/* 範囲選択外 */
-	case CEnemy::TYPE::MAX:
+	case TYPE::NONE:	/* 範囲選択外 */
+	case TYPE::MAX:
 	default:
 		assert(false);
 		break;
