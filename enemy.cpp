@@ -11,7 +11,6 @@
 #include "enemy.h"
 #include "enemyHuman.h"
 #include "enemyBird.h"
-#include "main.h"
 
 #include <stdio.h>
 #include <stdlib.h>
