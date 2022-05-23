@@ -41,7 +41,7 @@ public:		/* コンストラクタ・デストラクタ */
 	virtual ~CEnemy();
 
 public:		/* 仮想関数宣言 */
-	virtual void Init() = 0;	//初期化 (純粋仮想関数「～ = 0;」 … 関数の実態は不要)
+	virtual void Init() = 0;	//初期化 (純粋仮想関数「～ = 0;」…関数の実態は不要)
 	virtual void Input() = 0;	//入力
 	virtual void Output() = 0;	//出力
 	virtual void Uninit() = 0;	//終了
